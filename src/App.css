@@ -1,33 +1,118 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
 .App {
-  text-align: center;
+  display: flex;
+  width: 100%;
+  min-height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  list-style: none;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Color Picker */
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.chart-wrap {
+  display: flex;
+  width: 100%;
+  height: 250px;
+  min-height: 0px;
+}
+
+.graph-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 260px;
+  max-width: 100%;
+}
+
+.color-container {
+  display: flex;
+  width: 100%;
+}
+
+.color-picker {
+  position: relative;
+  display: flex;
+  width: 50%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.color-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+  margin: 0 1px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+}
+
+.color-title {
+  position: absolute;
+  z-index: 1;
   color: white;
+  font-weight: 700;
+  font-size: 14px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 960px) {
+  .wrapper {
+    flex-direction: row-reverse;
+    height: 280px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .graph-container {
+    flex-direction: row-reverse;
+    flex-grow: 2;
+    min-width: 140px;
+    min-height: 100%;
+  }
+
+  .color-container {
+    flex-direction: column;
+    flex-grow: 2;
+    min-width: 140px;
+    height: 100%;
+  }
+
+  .color-picker {
+    height: 50%;
+    width: 100%;
+  }
+
+  .color-input {
+    height: 100%;
+  }
+
+  .chart-wrap {
+    min-width: 300px;
+    max-width: 600px;
+    height: 280px;
   }
 }
